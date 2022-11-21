@@ -92,7 +92,7 @@ export default function createSocketServer(server: http.Server) {
         // emit to the browser, that pairing is successful
         console.log("new temperature from patient");
 
-        socket.emit("temperature", msg);
+        socket.emit("temperature", parseInt(msg) + 27);
       });
     });
   });
