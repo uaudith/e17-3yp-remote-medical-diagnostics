@@ -15,7 +15,7 @@ const handlers: { [id: string]: (message: string) => void } = {};
 
 export function add_listener(
   topic: string,
-  handler: (message: string) => void
+  handler: (message: string | Buffer) => void
 ) {
   handlers[topic] = handler;
 }

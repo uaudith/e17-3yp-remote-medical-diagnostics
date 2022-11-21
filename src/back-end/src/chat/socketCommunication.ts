@@ -91,8 +91,8 @@ export default function createSocketServer(server: http.Server) {
       add_listener("medgenie/&Iv05T/temperature", (msg) => {
         // emit to the browser, that pairing is successful
         console.log("new temperature from patient");
-
-        socket.emit("temperature", parseInt(msg) + 27);
+        const temp = JSON.parse(msg.toString());
+        socket.emit("temperature", parseInt(temp) + 27);
       });
     });
   });
